@@ -58,8 +58,11 @@
             {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
         {{ end }}
         <p class="cta-btns">
-          <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="btn {{if $bg.text_color_light}}btn-light{{else}}btn-primary{{end}} btn-lg mb-md-1">{{ if $item.cta_icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ $item.cta_icon }} pr-1" aria-hidden="true"></i>{{end}}{{ $item.cta_label | markdownify | emojify | safeHTML }}</a>
+          <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="btn btn-outline-light btn-lg"> {{ if $item.cta_icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ $item.cta_icon }} pr-1" aria-hidden="true"></i>{{end}}{{ $item.cta_label | markdownify | emojify | safeHTML }}</a>
         </p>
+<!-- the chunk below was commented out, and the chunk above from {{ $link := $item.cta_url }} inclusive to here was added to try and fix the  
+class="btn {{if $bg.text_color_light}}btn-light{{else}}btn-primary{{end}} btn-lg mb-md-1">
+-->
 <!--          <p>
             <a href="{{ $item.cta_url }}" class="btn btn-outline-light btn-lg">
               {{- with $item.cta_icon -}}<i class="{{ $pack }} {{ $pack }}-{{ . }}" style="padding-right: 10px;"></i>{{- end -}}
